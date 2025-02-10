@@ -22,7 +22,8 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.Toolwindows.WebToolWindow" anchor="right"
-                    factoryClass="org.yqj.plugin.first.CalendarToolWindowFactory"/>
+<!--        <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.Toolwindows.WebToolWindow" anchor="right"-->
+<!--                    factoryClass="org.yqj.plugin.first.CalendarToolWindowFactory"/>-->
     </extensions>
+
 </idea-plugin>
