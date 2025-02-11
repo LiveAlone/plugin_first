@@ -17,15 +17,15 @@ import org.jetbrains.annotations.NotNull;
  */
 final class MyTypedHandler extends TypedHandlerDelegate {
 
-  @NotNull
-  @Override
-  public Result charTyped(char c, @NotNull Project project, @NotNull Editor editor, @NotNull PsiFile file) {
-    final Document document = editor.getDocument();
+    @NotNull
+    @Override
+    public Result charTyped(char c, @NotNull Project project, @NotNull Editor editor, @NotNull PsiFile file) {
+        final Document document = editor.getDocument();
 
-    // 监听输入字符，强制插入内容
-    Runnable runnable = () -> document.insertString(0, "editor_basics\n");
-    WriteCommandAction.runWriteCommandAction(project, runnable);
-    return Result.STOP;
-  }
+        // 监听输入字符，强制插入内容
+        Runnable runnable = () -> document.insertString(0, "editor_basics\n");
+        WriteCommandAction.runWriteCommandAction(project, runnable);
+        return Result.STOP;
+    }
 
 }

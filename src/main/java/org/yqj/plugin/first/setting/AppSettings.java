@@ -17,33 +17,33 @@ import org.jetbrains.annotations.NotNull;
  */
 
 @State(
-    name = "org.intellij.sdk.settings.AppSettings",
-    storages = @Storage("SdkSettingsPlugin.xml")
+        name = "org.intellij.sdk.settings.AppSettings",
+        storages = @Storage("SdkSettingsPlugin.xml")
 )
 final class AppSettings
-    implements PersistentStateComponent<AppSettings.State> {
+        implements PersistentStateComponent<AppSettings.State> {
 
-  static class State {
-    @NonNls
-    public String userId = "John Smith";
-    public boolean ideaStatus = false;
-  }
+    static class State {
+        @NonNls
+        public String userId = "John Smith";
+        public boolean ideaStatus = false;
+    }
 
-  private State myState = new State();
+    private State myState = new State();
 
-  static AppSettings getInstance() {
-    return ApplicationManager.getApplication()
-        .getService(AppSettings.class);
-  }
+    static AppSettings getInstance() {
+        return ApplicationManager.getApplication()
+                .getService(AppSettings.class);
+    }
 
-  @Override
-  public State getState() {
-    return myState;
-  }
+    @Override
+    public State getState() {
+        return myState;
+    }
 
-  @Override
-  public void loadState(@NotNull State state) {
-    myState = state;
-  }
+    @Override
+    public void loadState(@NotNull State state) {
+        myState = state;
+    }
 
 }

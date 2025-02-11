@@ -21,48 +21,48 @@ import org.jetbrains.annotations.Nullable;
 
 public class DemoRunConfiguration extends RunConfigurationBase<DemoRunConfigurationOptions> {
 
-  protected DemoRunConfiguration(Project project,
-                                 ConfigurationFactory factory,
-                                 String name) {
-    super(project, factory, name);
-  }
+    protected DemoRunConfiguration(Project project,
+                                   ConfigurationFactory factory,
+                                   String name) {
+        super(project, factory, name);
+    }
 
-  @NotNull
-  @Override
-  protected DemoRunConfigurationOptions getOptions() {
-    return (DemoRunConfigurationOptions) super.getOptions();
-  }
+    @NotNull
+    @Override
+    protected DemoRunConfigurationOptions getOptions() {
+        return (DemoRunConfigurationOptions) super.getOptions();
+    }
 
-  public String getScriptName() {
-    return getOptions().getScriptName();
-  }
+    public String getScriptName() {
+        return getOptions().getScriptName();
+    }
 
-  public void setScriptName(String scriptName) {
-    getOptions().setScriptName(scriptName);
-  }
+    public void setScriptName(String scriptName) {
+        getOptions().setScriptName(scriptName);
+    }
 
-  @NotNull
-  @Override
-  public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
-    return new DemoSettingsEditor();
-  }
+    @NotNull
+    @Override
+    public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
+        return new DemoSettingsEditor();
+    }
 
-  @Nullable
-  @Override
-  public RunProfileState getState(@NotNull Executor executor,
-                                  @NotNull ExecutionEnvironment environment) {
-    return new CommandLineState(environment) {
-      @NotNull
-      @Override
-      protected ProcessHandler startProcess() throws ExecutionException {
-        GeneralCommandLine commandLine =
-            new GeneralCommandLine(getOptions().getScriptName());
-        OSProcessHandler processHandler = ProcessHandlerFactory.getInstance()
-            .createColoredProcessHandler(commandLine);
-        ProcessTerminatedListener.attach(processHandler);
-        return processHandler;
-      }
-    };
-  }
+    @Nullable
+    @Override
+    public RunProfileState getState(@NotNull Executor executor,
+                                    @NotNull ExecutionEnvironment environment) {
+        return new CommandLineState(environment) {
+            @NotNull
+            @Override
+            protected ProcessHandler startProcess() throws ExecutionException {
+                GeneralCommandLine commandLine =
+                        new GeneralCommandLine(getOptions().getScriptName());
+                OSProcessHandler processHandler = ProcessHandlerFactory.getInstance()
+                        .createColoredProcessHandler(commandLine);
+                ProcessTerminatedListener.attach(processHandler);
+                return processHandler;
+            }
+        };
+    }
 
 }

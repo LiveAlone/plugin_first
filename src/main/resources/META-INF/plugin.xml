@@ -27,7 +27,7 @@
 <!--        <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.Toolwindows.WebToolWindow" anchor="right"-->
 <!--                    factoryClass="org.yqj.plugin.first.toolwindow.CalendarToolWindowFactory"/>-->
 
-<!--        &lt;!&ndash; 配置管理弹窗信息 &ndash;&gt;-->
+        <!-- 配置管理弹窗信息 -->
 <!--        <applicationConfigurable parentId="tools" instance="org.yqj.plugin.first.setting.AppSettingsConfigurable"-->
 <!--                                 id="org.yqj.plugin.first.setting.AppSettingsConfigurable"-->
 <!--                                 displayName="SDK: Application Settings Example"/>-->
@@ -39,6 +39,25 @@
 
 <!--        <typedHandler implementation="org.yqj.plugin.first.editor.MyTypedHandler"/>-->
 
+        <!-- 代码检查 -->
+<!--        <localInspection language="JAVA"-->
+<!--                         bundle="messages.InspectionBundle"-->
+<!--                         key="inspection.comparing.string.references.display.name"-->
+<!--                         groupPath="Java"-->
+<!--                         groupBundle="messages.InspectionsBundle"-->
+<!--                         groupKey="group.names.probable.bugs"-->
+<!--                         enabledByDefault="true"-->
+<!--                         level="WARNING"-->
+<!--                         implementationClass="org.yqj.plugin.first.inspection.ComparingStringReferencesInspection"/>-->
+
+<!--        <intentionAction>-->
+<!--            <language>JAVA</language> &lt;!&ndash; available in 2022.3 and later &ndash;&gt;-->
+<!--            <className>org.yqj.plugin.first.intention.ConditionalOperatorConverter</className>-->
+<!--            <category>SDK intentions</category>-->
+<!--        </intentionAction>-->
+
+        <!-- file tree -->
+<!--        <treeStructureProvider implementation="org.yqj.plugin.first.treeStructureProvider.TextOnlyTreeStructureProvider"/>-->
     </extensions>
 
     <actions>
@@ -47,7 +66,7 @@
 <!--            <add-to-group group-id="ToolsMenu" anchor="first"/>-->
 <!--        </action>-->
 
-<!--        &lt;!&ndash; group 关联添加分组 &ndash;&gt;-->
+        <!-- group 关联添加分组 -->
 <!--        <group id="org.intellij.sdk.action.GroupedActions"-->
 <!--               text="Static Grouped Actions" description="SDK statically grouped action example"-->
 <!--               popup="true" icon="SdkIcons.Sdk_default_icon">-->
@@ -58,7 +77,7 @@
 <!--            </action>-->
 <!--        </group>-->
 
-<!--        &lt;!&ndash; 编辑动态菜单弹窗 &ndash;&gt;-->
+        <!-- 编辑动态菜单弹窗 -->
 <!--        <group id="org.yqj.plugin.first.action.CustomDefaultActionGroup" class="org.yqj.plugin.first.action.CustomDefaultActionGroup"-->
 <!--               text="Custom Default Action Group" description="SDK custom default action group example"-->
 <!--               popup="true">-->
@@ -68,7 +87,7 @@
 <!--                    icon="SdkIcons.Sdk_default_icon"/>-->
 <!--        </group>-->
 
-<!--        &lt;!&ndash; 动态添加菜单 &ndash;&gt;-->
+        <!-- 动态添加菜单 -->
 <!--        <group id="org.yqj.plugin.first.action.DynamicActionGroup" class="org.yqj.plugin.first.action.DynamicActionGroup"-->
 <!--               popup="true" text="Dynamically Grouped Actions 222222" description="SDK dynamically grouped action example"-->
 <!--               icon="SdkIcons.Sdk_default_icon">-->
@@ -83,30 +102,30 @@
 
 
         <!-- editor 编辑区域游标获取 -->
-        <action id="EditorBasics.EditorIllustrationAction"
-                class="org.yqj.plugin.first.editor.EditorIllustrationAction"
-                text="Editor Replace Text"
-                description="Replaces selected text with 'Replacement'."
-                icon="SdkIcons.Sdk_default_icon">
-            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-        </action>
-        <!-- EditorActionHandler 批量添加插入游标 -->
-        <action id="EditorBasics.EditorHandlerIllustration"
-                class="org.yqj.plugin.first.editor.EditorHandlerIllustration"
-                text="Editor Add Caret"
-                description="Adds a second caret below the existing one."
-                icon="SdkIcons.Sdk_default_icon">
-            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-        </action>
-        <!-- 获取游标位置 -->
-        <action id="EditorBasics.LogicalPositionIllustration"
-                class="org.yqj.plugin.first.editor.EditorAreaIllustration"
-                text="Caret Position"
-                description="Reports information about the caret position."
-                icon="SdkIcons.Sdk_default_icon">
-            <keyboard-shortcut keymap="$default" first-keystroke="control alt G"/>
-            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-        </action>
+<!--        <action id="EditorBasics.EditorIllustrationAction"-->
+<!--                class="org.yqj.plugin.first.editor.EditorIllustrationAction"-->
+<!--                text="Editor Replace Text"-->
+<!--                description="Replaces selected text with 'Replacement'."-->
+<!--                icon="SdkIcons.Sdk_default_icon">-->
+<!--            <add-to-group group-id="EditorPopupMenu" anchor="first"/>-->
+<!--        </action>-->
+<!--        &lt;!&ndash; EditorActionHandler 批量添加插入游标 &ndash;&gt;-->
+<!--        <action id="EditorBasics.EditorHandlerIllustration"-->
+<!--                class="org.yqj.plugin.first.editor.EditorHandlerIllustration"-->
+<!--                text="Editor Add Caret"-->
+<!--                description="Adds a second caret below the existing one."-->
+<!--                icon="SdkIcons.Sdk_default_icon">-->
+<!--            <add-to-group group-id="EditorPopupMenu" anchor="first"/>-->
+<!--        </action>-->
+<!--        &lt;!&ndash; 获取游标位置 &ndash;&gt;-->
+<!--        <action id="EditorBasics.LogicalPositionIllustration"-->
+<!--                class="org.yqj.plugin.first.editor.EditorAreaIllustration"-->
+<!--                text="Caret Position"-->
+<!--                description="Reports information about the caret position."-->
+<!--                icon="SdkIcons.Sdk_default_icon">-->
+<!--            <keyboard-shortcut keymap="$default" first-keystroke="control alt G"/>-->
+<!--            <add-to-group group-id="EditorPopupMenu" anchor="first"/>-->
+<!--        </action>-->
 
     </actions>
 

@@ -11,32 +11,32 @@ import javax.swing.*;
 
 public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
 
-  private final JPanel myPanel;
-  private final TextFieldWithBrowseButton scriptPathField;
+    private final JPanel myPanel;
+    private final TextFieldWithBrowseButton scriptPathField;
 
-  public DemoSettingsEditor() {
-    scriptPathField = new TextFieldWithBrowseButton();
-    scriptPathField.addBrowseFolderListener("Select Script File", null, null,
-        FileChooserDescriptorFactory.createSingleFileDescriptor());
-    myPanel = FormBuilder.createFormBuilder()
-        .addLabeledComponent("Script file", scriptPathField)
-        .getPanel();
-  }
+    public DemoSettingsEditor() {
+        scriptPathField = new TextFieldWithBrowseButton();
+        scriptPathField.addBrowseFolderListener("Select Script File", null, null,
+                FileChooserDescriptorFactory.createSingleFileDescriptor());
+        myPanel = FormBuilder.createFormBuilder()
+                .addLabeledComponent("Script file", scriptPathField)
+                .getPanel();
+    }
 
-  @Override
-  protected void resetEditorFrom(DemoRunConfiguration demoRunConfiguration) {
-    scriptPathField.setText(demoRunConfiguration.getScriptName());
-  }
+    @Override
+    protected void resetEditorFrom(DemoRunConfiguration demoRunConfiguration) {
+        scriptPathField.setText(demoRunConfiguration.getScriptName());
+    }
 
-  @Override
-  protected void applyEditorTo(@NotNull DemoRunConfiguration demoRunConfiguration) {
-    demoRunConfiguration.setScriptName(scriptPathField.getText());
-  }
+    @Override
+    protected void applyEditorTo(@NotNull DemoRunConfiguration demoRunConfiguration) {
+        demoRunConfiguration.setScriptName(scriptPathField.getText());
+    }
 
-  @NotNull
-  @Override
-  protected JComponent createEditor() {
-    return myPanel;
-  }
+    @NotNull
+    @Override
+    protected JComponent createEditor() {
+        return myPanel;
+    }
 
 }

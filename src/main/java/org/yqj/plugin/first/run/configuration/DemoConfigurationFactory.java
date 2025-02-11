@@ -12,26 +12,26 @@ import org.jetbrains.annotations.Nullable;
 
 public class DemoConfigurationFactory extends ConfigurationFactory {
 
-  protected DemoConfigurationFactory(ConfigurationType type) {
-    super(type);
-  }
+    protected DemoConfigurationFactory(ConfigurationType type) {
+        super(type);
+    }
 
-  @Override
-  public @NotNull String getId() {
-    return DemoRunConfigurationType.ID;
-  }
+    @Override
+    public @NotNull String getId() {
+        return DemoRunConfigurationType.ID;
+    }
 
-  @NotNull
-  @Override
-  public RunConfiguration createTemplateConfiguration(
-      @NotNull Project project) {
-    return new DemoRunConfiguration(project, this, "Demo");
-  }
+    @NotNull
+    @Override
+    public RunConfiguration createTemplateConfiguration(
+            @NotNull Project project) {
+        return new DemoRunConfiguration(project, this, "Demo");
+    }
 
-  @Nullable
-  @Override
-  public Class<? extends BaseState> getOptionsClass() {
-    return DemoRunConfigurationOptions.class;
-  }
+    @Nullable
+    @Override
+    public Class<? extends BaseState> getOptionsClass() {
+        return DemoRunConfigurationOptions.class;
+    }
 
 }
