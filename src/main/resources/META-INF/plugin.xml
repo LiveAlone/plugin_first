@@ -32,6 +32,9 @@
 <!--                                 displayName="SDK: Application Settings Example"/>-->
 <!--        &lt;!&ndash; 持久化配置信息 &ndash;&gt;-->
 <!--        <applicationService serviceImplementation="org.yqj.plugin.first.setting.AppSettings"/>-->
+
+        <!-- shell command 执行文件 -->
+        <configurationType implementation="org.yqj.plugin.first.run.configuration.DemoRunConfigurationType"/>
     </extensions>
 
 <!--    <actions>-->
