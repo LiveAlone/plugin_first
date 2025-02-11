@@ -18,6 +18,7 @@
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
@@ -34,10 +35,13 @@
 <!--        <applicationService serviceImplementation="org.yqj.plugin.first.setting.AppSettings"/>-->
 
         <!-- shell command 执行文件 -->
-        <configurationType implementation="org.yqj.plugin.first.run.configuration.DemoRunConfigurationType"/>
+<!--        <configurationType implementation="org.yqj.plugin.first.run.configuration.DemoRunConfigurationType"/>-->
+
+<!--        <typedHandler implementation="org.yqj.plugin.first.editor.MyTypedHandler"/>-->
+
     </extensions>
 
-<!--    <actions>-->
+    <actions>
 <!--        <action id="org.yqj.plugin.first.action.PopupDialogAction" class="org.yqj.plugin.first.action.PopupDialogAction"-->
 <!--                text="Popup Dialog Action" description="SDK action example" icon="SdkIcons.Sdk_default_icon">-->
 <!--            <add-to-group group-id="ToolsMenu" anchor="first"/>-->
@@ -70,6 +74,40 @@
 <!--               icon="SdkIcons.Sdk_default_icon">-->
 <!--            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.GroupedActions"/>-->
 <!--        </group>-->
-<!--    </actions>-->
+
+        <!-- PSI Action 操作 -->
+<!--        <action class="org.yqj.plugin.first.psi.PsiNavigationDemoAction" id="PsiNavigationDemo"-->
+<!--                text="PSI Navigation Demo...">-->
+<!--            <add-to-group group-id="ToolsMenu" anchor="last"/>-->
+<!--        </action>-->
+
+
+        <!-- editor 编辑区域游标获取 -->
+        <action id="EditorBasics.EditorIllustrationAction"
+                class="org.yqj.plugin.first.editor.EditorIllustrationAction"
+                text="Editor Replace Text"
+                description="Replaces selected text with 'Replacement'."
+                icon="SdkIcons.Sdk_default_icon">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <!-- EditorActionHandler 批量添加插入游标 -->
+        <action id="EditorBasics.EditorHandlerIllustration"
+                class="org.yqj.plugin.first.editor.EditorHandlerIllustration"
+                text="Editor Add Caret"
+                description="Adds a second caret below the existing one."
+                icon="SdkIcons.Sdk_default_icon">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <!-- 获取游标位置 -->
+        <action id="EditorBasics.LogicalPositionIllustration"
+                class="org.yqj.plugin.first.editor.EditorAreaIllustration"
+                text="Caret Position"
+                description="Reports information about the caret position."
+                icon="SdkIcons.Sdk_default_icon">
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt G"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+
+    </actions>
 
 </idea-plugin>

@@ -16,8 +16,7 @@ repositories {
 intellij {
     version.set("2024.1.7")
     type.set("IC") // Target IDE Platform
-
-    plugins.set(listOf(/* Plugin Dependencies */))
+    plugins.set(listOf("com.intellij.java"))
 }
 
 tasks {
