@@ -22,8 +22,51 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
+        <!-- tool windows -->
 <!--        <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.Toolwindows.WebToolWindow" anchor="right"-->
-<!--                    factoryClass="org.yqj.plugin.first.CalendarToolWindowFactory"/>-->
+<!--                    factoryClass="org.yqj.plugin.first.toolwindow.CalendarToolWindowFactory"/>-->
+
+<!--        &lt;!&ndash; 配置管理弹窗信息 &ndash;&gt;-->
+<!--        <applicationConfigurable parentId="tools" instance="org.yqj.plugin.first.setting.AppSettingsConfigurable"-->
+<!--                                 id="org.yqj.plugin.first.setting.AppSettingsConfigurable"-->
+<!--                                 displayName="SDK: Application Settings Example"/>-->
+<!--        &lt;!&ndash; 持久化配置信息 &ndash;&gt;-->
+<!--        <applicationService serviceImplementation="org.yqj.plugin.first.setting.AppSettings"/>-->
     </extensions>
+
+<!--    <actions>-->
+<!--        <action id="org.yqj.plugin.first.action.PopupDialogAction" class="org.yqj.plugin.first.action.PopupDialogAction"-->
+<!--                text="Popup Dialog Action" description="SDK action example" icon="SdkIcons.Sdk_default_icon">-->
+<!--            <add-to-group group-id="ToolsMenu" anchor="first"/>-->
+<!--        </action>-->
+
+<!--        &lt;!&ndash; group 关联添加分组 &ndash;&gt;-->
+<!--        <group id="org.intellij.sdk.action.GroupedActions"-->
+<!--               text="Static Grouped Actions" description="SDK statically grouped action example"-->
+<!--               popup="true" icon="SdkIcons.Sdk_default_icon">-->
+<!--            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.yqj.plugin.first.action.PopupDialogAction"/>-->
+<!--            <action id="org.intellij.sdk.action.GroupPopDialogAction" class="org.yqj.plugin.first.action.PopupDialogAction"-->
+<!--                    text="A Group Action" description="SDK static grouped action example"-->
+<!--                    icon="SdkIcons.Sdk_default_icon">-->
+<!--            </action>-->
+<!--        </group>-->
+
+<!--        &lt;!&ndash; 编辑动态菜单弹窗 &ndash;&gt;-->
+<!--        <group id="org.yqj.plugin.first.action.CustomDefaultActionGroup" class="org.yqj.plugin.first.action.CustomDefaultActionGroup"-->
+<!--               text="Custom Default Action Group" description="SDK custom default action group example"-->
+<!--               popup="true">-->
+<!--            <add-to-group group-id="EditorPopupMenu" anchor="first"/>-->
+<!--            <action id="org.intellij.sdk.action.CustomGroupedAction" class="org.yqj.plugin.first.action.PopupDialogAction"-->
+<!--                    text="Custom Grouped Action" description="SDK custom grouped action example"-->
+<!--                    icon="SdkIcons.Sdk_default_icon"/>-->
+<!--        </group>-->
+
+<!--        &lt;!&ndash; 动态添加菜单 &ndash;&gt;-->
+<!--        <group id="org.yqj.plugin.first.action.DynamicActionGroup" class="org.yqj.plugin.first.action.DynamicActionGroup"-->
+<!--               popup="true" text="Dynamically Grouped Actions 222222" description="SDK dynamically grouped action example"-->
+<!--               icon="SdkIcons.Sdk_default_icon">-->
+<!--            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.GroupedActions"/>-->
+<!--        </group>-->
+<!--    </actions>-->
 
 </idea-plugin>

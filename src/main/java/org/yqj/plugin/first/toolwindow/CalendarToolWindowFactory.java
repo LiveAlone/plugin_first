@@ -1,5 +1,5 @@
 // Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
-package org.yqj.plugin.first;
+package org.yqj.plugin.first.toolwindow;
 
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
@@ -24,7 +24,7 @@ final class CalendarToolWindowFactory implements ToolWindowFactory, DumbAware {
 //    toolWindow.getContentManager().addContent(content);
     System.out.println("***** CalendarToolWindowFactory.createToolWindowContent *****");
     JPanel contentPanel = new JPanel();
-    contentPanel.add(new JLabel("Hello World"));
+    contentPanel.add(new JLabel("Hello World 123123123"));
     Content content = ContentFactory.getInstance().createContent(contentPanel, "", false);
     toolWindow.getContentManager().addContent(content);
   }
