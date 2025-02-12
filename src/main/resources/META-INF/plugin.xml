@@ -58,6 +58,9 @@
 
         <!-- file tree -->
 <!--        <treeStructureProvider implementation="org.yqj.plugin.first.treeStructureProvider.TextOnlyTreeStructureProvider"/>-->
+
+        <!-- facet type demo -->
+        <facetType implementation="org.yqj.plugin.first.facet.DemoFacetType"/>
     </extensions>
 
     <actions>
