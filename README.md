@@ -11,3 +11,4 @@ intellij platform plugin first head, start template for reuse
 6. setting, configuration setting. 
 7. toolwindow. tool interaction window.
 8. tree. project lib source tree.
+9. model. modle edit supoort.
